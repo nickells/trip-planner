@@ -1,5 +1,6 @@
 body {
-  padding: 30px;
+
+  padding: 15px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -14,7 +15,7 @@ a {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	padding: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 
 }
 
@@ -22,7 +23,7 @@ a {
 .container{
 	float: right;
 	width: 30%;
-
+	padding-right: 0px;
 }
 
 .noPadding{
@@ -54,9 +55,14 @@ a {
 	font: 10px "Lucida Grande";
 	border: 1px solid lightgray;
 	margin: 5px;
+	box-shadow: 0px 1px 1px lightgray;
+
 }
 .circleButton:hover{
-	background: lightgray;
+	background: #EEE;
+}
+.circleButton:active{
+	box-shadow: 0px 0px 0px;
 }
 
 .boxContents{
@@ -84,20 +90,29 @@ a {
 	transform: rotate(360deg);
 }
 
-select{
-	appearance: none;
-	width: 70%;
+.sticker{
+	box-shadow: 0px 1px 2px grey;
+	width: 50px;
+	background: #66F;
+	color: white;
+	border: 1px solid #44F;
+	border-radius: 5px;
+	padding: 3px 6px;
+	margin: 3px;
+	font: 12px Lucida Grande;
 }
 
-.red{
-	color: red;
-	border-color: red;
+select{
+	appearance: none;
+	width: calc(100% - 30px);
 }
+
+
 
 #map-canvas{
 	float: left;
 	padding: 10px;
 	width: 70%;
 	border-radius: 5px;
-	height: 500px;
+	height: 85vh;
 }
