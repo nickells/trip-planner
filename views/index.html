@@ -1,36 +1,64 @@
 {% extends "layout.html" %}
 
 {% block selectors %}
+
+
 <div class="labels">Hotels:</div>
-<select id="hotelSelector">
-	{% for hotel in all_hotels %}
-<option>{{hotel.name}}</option>
-	{% endfor %}
-</select><div class = "circleButton smaller" id="hotelPlus" action="/post">+</div>
+<div class="selectHolder">
+	<select id="hotel">
+		{% for hotel in hotels %}
+		<option>{{hotel.name}}</option>
+		{% endfor %}
+	</select><div class = "circleButton smaller" id="hotelPlus" action="/post">+</div>
+</div>
+
+<div class="selectHolder">
 	<div class="labels">Restaurants:</div>
-<select id = "restaurantSelector">
-	{% for restaurant in all_restaurants %}
-<option>{{restaurant.name}}</option>
-	{% endfor %}
-</select><div class = "circleButton smaller" id="restaurantPlus">+</div>
+	<select id = "restaurant">
+		{% for restaurant in restaurants %}
+		<option>{{restaurant.name}}</option>
+		{% endfor %}
+	</select><div class = "circleButton smaller" id="restaurantPlus">+</div>
+
+</div>
+<div class="selectHolder">
 	<div class="labels">Things To Do:</div>
-<select id = "thingSelector">
-	{% for thingsToDo in all_things_to_do %}
-<option>{{thingsToDo.name}}</option>
-	{% endfor %}
-</select><div class = "circleButton smaller" id="thingPlus">+</div>
+	<select id = "thing">
+		{% for thingsToDo in things_to_do %}
+		<option>{{thingsToDo.name}}</option>
+		{% endfor %}
+	</select><div class = "circleButton smaller" id="thingPlus">+</div>
+</div>
 
 {% endblock %}
 
 {% block calendar %}
-<div class="boxHeader"><div class = "sticker">Day 1</div><div class="circleButton">1</div><div class="circleButton">2</div><div class="circleButton">3</div><div class="circleButton">+</div></div>
+<div class="boxHeader"><div class = "sticker">Day 1</div><div class="circleButton day">1</div><!-- <div class="circleButton">2</div><div class="circleButton">3</div> --><div class="circleButton" id="plus">+</div></div>
 <div class="boxContents">
-<div class="labels">My Hotel</div>
-{{selectedHotel}} <div class = "circleButton smaller">x</div>
-<div class="labels">My Restaurants</div>
-{{selectedRestaurant}}<div class = "circleButton smaller">x</div>
-<div class="labels">My Things To Do</div>
-{{selectedThing}} <div class = "circleButton smaller">x</div>
-</div>
+	<div class="labels" id="hotel">My Hotel</div>
 
+	<div class="addPadding">$thisName<div class = "circleButton smaller">x</div></div>
+
+	<div class="labels" id="restaurant">My Restaurants</div>
+	<!-- {{selectedRestaurant}} --><!-- <div class = "circleButton smaller">x</div> -->
+	<div class="labels" id="thing">My Things To Do</div>
+	<!-- {{selectedThing}} --> <!-- <div class = "circleButton smaller">x</div> -->
+</div>
+<script>
+{% autoescape false %}
+
+var all_hotels= {{ hotels | json }};
+// console.log(all_hotels)
+var all_restaurants= {{ restaurants | json }};
+var all_things_to_do = {{ things_to_do | json }};
+var all_places = {{ place | json }};
+
+{% endautoescape %}
+</script>
+
+
+
+<script src="/javascripts/jqueries.js"></script>
+
+<!-- hello -->
 {% endblock %}

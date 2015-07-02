@@ -55,17 +55,13 @@ a {
 
 .boxContents {
   padding: 20px;
-  background: white;
-  border-top: 1px solid transparent;
-  border-radius: 0px 0px 5px 5px; }
+  background: white; }
 
 .boxHeader {
   box-sizing: padding-box;
   width: 100%;
   background: #EEE;
-  padding: 10px 20px;
-  border-top: 1px solid transparent;
-  border-radius: 5px 5px 0px 0px; }
+  padding: 10px 20px; }
 
 .smaller {
   width: 20px;

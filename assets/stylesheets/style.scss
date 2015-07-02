@@ -18,7 +18,6 @@ a {
 
 }
 
-
 .container{
 	float: right;
 	width: 30%;
@@ -67,6 +66,8 @@ a {
 .boxContents{
 	padding: 20px;
 	background: white;
+	border-top: 1px solid transparent;
+	border-radius: 0px 0px 5px 5px;
 
 }
 .boxHeader{
@@ -74,6 +75,8 @@ a {
 	width: 100%;
 	background: #EEE;
 	padding: 10px 20px;
+	border-top: 1px solid transparent;
+	border-radius: 5px 5px 0px 0px;
 }
 
 .smaller{
