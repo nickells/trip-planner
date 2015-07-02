@@ -22,11 +22,11 @@ app.use('/',routes);
 
 app.use(sassMiddleware({
    /* Options */
-   src: __dirname,
+   src: path.join(__dirname, 'assets'),
    dest: path.join(__dirname, 'public'),
    debug: true,
-   outputStyle: 'compressed',
-   prefix:  '/prefix'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+   // outputStyle: 'compressed',
+   // prefix:  '/prefix'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -53,4 +53,4 @@ app.use(function(err, req, res, next) {
     );
 });
 
-app.listen(3000);
+module.exports = app;
