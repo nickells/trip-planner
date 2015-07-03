@@ -90,7 +90,10 @@ a {
   font: 12px Lucida Grande; }
 
 select {
-  appearance: none;
+  height: 25px;
+  border: 1px solid lightgray;
+  background: #FFF;
+  box-shadow: 0px 1px 1px lightgrey;
   width: calc(100% - 30px); }
 
 #map-canvas {

@@ -18,6 +18,7 @@ a {
 
 }
 
+
 .container{
 	float: right;
 	width: 30%;
@@ -26,6 +27,10 @@ a {
 
 .noPadding{
 	padding: 0px;
+}
+
+.addPadding{
+	padding: 5px;
 }
 
 .labels{
@@ -53,7 +58,7 @@ a {
 	font: 10px "Lucida Grande";
 	border: 1px solid lightgray;
 	margin: 5px;
-	box-shadow: 0px 1px 1px lightgray;
+	box-shadow: 0px 1px 1px #EEE;
 
 }
 .circleButton:hover{
@@ -66,8 +71,6 @@ a {
 .boxContents{
 	padding: 20px;
 	background: white;
-	border-top: 1px solid transparent;
-	border-radius: 0px 0px 5px 5px;
 
 }
 .boxHeader{
@@ -75,8 +78,6 @@ a {
 	width: 100%;
 	background: #EEE;
 	padding: 10px 20px;
-	border-top: 1px solid transparent;
-	border-radius: 5px 5px 0px 0px;
 }
 
 .smaller{
@@ -105,10 +106,7 @@ a {
 }
 
 select{
-	height: 25px;
-	border: 1px solid lightgray;
-	background: #FFF;
-	box-shadow: 0px 1px 1px lightgrey;
+	appearance: none;
 	width: calc(100% - 30px);
 }
 

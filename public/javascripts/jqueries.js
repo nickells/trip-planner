@@ -68,6 +68,17 @@ $('.calendar').on('click', '#plus', function(){
     clearBoxContents();
     updateDay(day);
     repopBoxContents(day);
+
+	//edit color for the new item
+	$(this).last().prev().css({"background":"#66F",
+		"color": "white",
+		"border": "1px solid #44F"})
+	$(this).last().prev().siblings('.day').css({
+		"background": "white",
+		"border-radius": "200px",
+		"color": "gray",
+		"border": "1px solid lightgray"
+	});
 })
 
 	//select day
@@ -76,12 +87,14 @@ $('.calendar').on('click', '.day', function(){
 	updateDay(chosenDay);
 	clearBoxContents();
     repopBoxContents(chosenDay);
+
+    //color selected button --could use refactoring
     $(this).siblings('.day').css({
     "background": "white",
 	"border-radius": "200px",
 	"color": "gray",
 	"border": "1px solid lightgray"
-});
+	});
     $(this).css({"background":"#66F",
     			"color": "white",
     			"border": "1px solid #44F"})
@@ -121,5 +134,6 @@ $('.calendar').on('click', '.day', function(){
 
 	//Update Day Label 
 	function updateDay(day){
-		$('.sticker')[0].textContent = ("Day " + day)
+		$('.sticker')[0].textContent = ("Day " + day);
+
 	}
